@@ -68,5 +68,45 @@ function cartElement($buyerID,$productimg, $productname, $productprice, $product
     ";
     echo  $element;
 }
+<<<<<<< HEAD
 ?>
 
+=======
+
+
+function cartElement_afterOrader($buyerID,$productimg, $productname, $productprice, $productid,$paymentDate,$paymentID){
+    $element = "
+    
+    <form action=\"../Cart/myCart.php?buyerID=$buyerID&action=remove&productID=$productid\" method=\"post\" class=\"cart-items\">
+                    <div class=\"border rounded\">
+                        <div class=\"row bg-white\">
+                            <div class=\"col-md-3 pl-0\">
+                                <img src=$productimg alt=\"Image1\" class=\"img-fluid\">
+                            </div>
+                            <div class=\"col-md-6\">
+                                <h5 class=\"pt-2\">$productname</h5>
+                                <small class=\"text-secondary\">Seller: dailytuition</small>
+                                <h5 class=\"pt-2\">₹$productprice</h5>
+                                <h5 class=\"btn btn-info mx-2\">Payment ID</h5>
+                                <h5 class=\"btn btn-info mx-2\">$paymentID</h5>
+                                <br>
+                                <h5 class=\"btn btn-info mx-2\">Payment Date</h5>
+                                <h5 class=\"btn btn-info mx-2\">$paymentDate</h5>
+                               
+                            </div>
+                            <div class=\"col-md-3 py-5\">
+                                <div>
+                                    <button type=\"button\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-minus\"></i></button>
+                                    <input type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
+                                    <button type=\"button\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-plus\"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+    
+    ";
+    echo  $element;
+}
+?>
+>>>>>>> c732502 (Second Commit)

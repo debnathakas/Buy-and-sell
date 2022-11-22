@@ -17,6 +17,10 @@ $buyerID=$_GET["buyerID"];
             <div class="shopping-cart">
 
                 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> c732502 (Second Commit)
                         
                         $sql1="SELECT * FROM `payproduct` WHERE buyerID='$buyerID'";
                         $stmt1=$conn->prepare($sql1);
@@ -36,7 +40,11 @@ $buyerID=$_GET["buyerID"];
                         if($count1>0){
                             $image='../../Seller/'.$row1['imageLocation'];
                             
+<<<<<<< HEAD
                                     cartElement($buyerID,$image, $row1['pname'],$row1['price'], $row1['pid']);
+=======
+                            cartElement_afterOrader($buyerID,$image, $row1['pname'],$row1['price'], $row1['pid'],$row['paymentDate'],$row['paymentID']);
+>>>>>>> c732502 (Second Commit)
                                     $total = $total + $row1['price'];
                                 
                             }

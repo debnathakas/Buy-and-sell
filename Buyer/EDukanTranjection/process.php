@@ -53,13 +53,25 @@ if(!empty($_POST['stripeToken'])){
     // ));  
     
 	
+<<<<<<< HEAD
     
 	   $insertTransactionSQL = "INSERT INTO e_dukan.payment(`buyerID`, `aid`, `paymentamount`, `paymentDate`, `paymentID`) VALUES ('$buyerId','212123004','$Total_Amount','','')";
 		
+=======
+       $paymentid=rand(1000000,5000000);
+    
+	   $insertTransactionSQL = "INSERT INTO e_dukan.payment(`buyerID`, `aid`, `paymentamount`, `paymentDate`, `paymentID`) VALUES ('$buyerId','212123004','$Total_Amount',Current_TimeStamp,'$paymentid')";
+		// $date=Current_TimeStamp();
+>>>>>>> c732502 (Second Commit)
         
         $stmt=$conn->prepare($insertTransactionSQL);
         $stmt->execute();
         
+<<<<<<< HEAD
+=======
+        
+
+>>>>>>> c732502 (Second Commit)
        //    if order inserted successfully
        if($stmt->rowCount()>0 ){
            $sql2="SELECT * FROM e_dukan.addedto WHERE buyerID='$buyerId'";
@@ -74,11 +86,17 @@ if(!empty($_POST['stripeToken'])){
             $stmt4=$conn->prepare($sql4);
             $stmt4->execute();
             $row4=$stmt4->fetch(PDO:: FETCH_ASSOC);
+<<<<<<< HEAD
             $price=$row['price'];
 
 
 
             $sql3="INSERT INTO e_dukan.payproduct VALUE('$pid','$buyerId','$price')";
+=======
+            $price0=$row4['price'];
+
+            $sql3="INSERT INTO e_dukan.payproduct VALUE('$pid','$buyerId',Current_TimeStamp,'$paymentid','$price0')";
+>>>>>>> c732502 (Second Commit)
             $stmt3=$conn->prepare($sql3);
             $stmt3->execute();
 
